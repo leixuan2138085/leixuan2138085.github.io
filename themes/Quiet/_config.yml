@@ -64,7 +64,7 @@ web_analytics:
 # 评论 
 gitalk:
   clientID: Ov23liv0JEFflu2qCY7p # （需要替换）GitHub Application Client ID.
-  clientSecret: cbbc2a9bc3b22736ddfadd2da7f1b9283ee818b5 #（需要替换）GitHub Application Client Secret.
+  clientSecret: 57983c5350ccc4e1a5367bcef2f7d4af60f1bfb0 #（需要替换）GitHub Application Client Secret.
   repo: leixuan2138085.github.io #（需要替换）GitHub repository.
   owner: leixuan2138085 #（需要替换）GitHub repository 所有者，可以是个人或者组织。
   admin: ['leixuan2138085'] #（需要替换）GitHub repository 的所有者和合作者 (对这个 repository 有写权限的用户)。
