@@ -1,22 +1,15 @@
 <% if(theme.gitalk.clientID && theme.gitalk.clientSecret) { %>
     <!-- Gitalk -->
     <script>
-        var adminArray = <%- JSON.stringify(theme.gitalk.admin) %>;
-        var gitalkConfig = {
-            clientID: '<%= theme.gitalk.clientID %>',
-            clientSecret: '<%= theme.gitalk.clientSecret %>',
-            repo: '<%= theme.gitalk.repo %>',
-            owner: '<%= theme.gitalk.owner %>',
-            admin: adminArray,
-            id: location.pathname,
-            distractionFreeMode: false
-        };
-        <% if(theme.gitalk.proxy) { %>
-        gitalkConfig.proxy = '<%= theme.gitalk.proxy %>';
-        <% } %>
-        var gitalk = new Gitalk(gitalkConfig);
+        const data = '{"clientID":"<%= theme.gitalk.clientID %>","clientSecret":"<%= theme.gitalk.clientSecret %>","repo":"<%= theme.gitalk.repo %>","owner":"<%= theme.gitalk.owner %>","admin":"<%= theme.gitalk.admin %>"}'
+        const gitalk = new Gitalk({
+            ...JSON.parse( data),
+            id:location.pathname,
+            distractionFreeMode:false
+        })
+        
         if(Boolean('<%= page.comments %>')){
-            gitalk.render('gitalk-container');
+            gitalk.render('gitalk-container')
         }
     </script>
 <% } %>
